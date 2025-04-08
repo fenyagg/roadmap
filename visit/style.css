@@ -9,6 +9,10 @@ html, body {
     min-height: 100%;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Play", sans-serif;
     font-weight: 400;
@@ -23,15 +27,16 @@ ul {
 
 .container {
     max-width: 1300px;
-    min-width: 1000px;
+    min-width: 1040px;
     margin: 16px auto;
+    padding: 0 20px;
 }
 
 .person {
     background-color: #C4C4C44D;
     border-radius: 10px;
     padding: 32px;
-    width: 36%;
+    width: 35%;
     max-width: 430px;
     min-width: 350px;
 }
