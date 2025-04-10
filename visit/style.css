@@ -99,6 +99,13 @@ ul {
                 font-weight: 700;
                 margin-bottom: 8px;
             }
+            .person-property a {
+                color: #fff;
+                text-decoration: none;
+            }
+                .person-property a:hover {
+                    text-decoration: underline;
+                }
     .person-lang-list {
         display: flex;
         flex-direction: column;
