@@ -147,6 +147,7 @@ html {
         cursor: pointer;
         background-color: #212121;
         color: white;
+        user-select: none;
     }
         .game:not([data-current-player]) .game-name {
             display: none;
