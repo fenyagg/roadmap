@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Крестики-нолики</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game" data-current-player="">
+        <div class="game-board">
+            <div class="game-board__fields">
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="0" data-y="0" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="1" data-y="0" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="2" data-y="0" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="0" data-y="1" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="1" data-y="1" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="2" data-y="1" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="0" data-y="2" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="1" data-y="2" />
+                    <span class="game-field__mark"></span>
+                </label>
+                <label class="game-field">
+                    <input type="radio" class="game-field__input" data-x="2" data-y="2" />
+                    <span class="game-field__mark"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="game-result">Result</div>
+        <div class="game-name">Tic Tac Toe</div>
+        <button type="button" class="game-reset">
+            <svg class="game-reset__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40.4792 7.52083C35.725 2.76666 28.9875 0.0249977 21.5792 0.783331C10.875 1.8625 2.06667 10.5542 0.870837 21.2583C-0.73333 35.4042 10.2042 47.3333 24 47.3333C33.3042 47.3333 41.2958 41.8792 45.0292 34.0333C45.9625 32.0792 44.5625 29.8333 42.4042 29.8333C41.325 29.8333 40.3042 30.4167 39.8375 31.3792C36.5417 38.4667 28.6375 42.9583 20.0042 41.0333C13.5292 39.6042 8.30834 34.325 6.9375 27.85C4.4875 16.5333 13.0917 6.5 24 6.5C28.8417 6.5 33.1583 8.5125 36.3083 11.6917L31.9042 16.0958C30.0667 17.9333 31.35 21.0833 33.9458 21.0833H44.4167C46.0208 21.0833 47.3333 19.7708 47.3333 18.1667V7.69583C47.3333 5.1 44.1833 3.7875 42.3458 5.625L40.4792 7.52083Z" fill="white"/>
+            </svg>
+            Restart
+        </button>
+    </div>
+
+    <script src="game.js"></script>
+    <script>
+        const $game = document.querySelector('[data-current-player]');
+        const $gameInputs = document.querySelectorAll('.game-field__input');
+        const $gameResult = document.querySelector('.game-result');
+        const $gameReset = document.querySelector('.game-reset');
+
+        if (!$game || !$gameInputs.length || !$gameResult || !$gameReset) {
+            throw new Error('No game fields');
+        }
+
+        const game = new Game($game, $gameInputs, $gameResult, $gameReset);
+        game.init();
+    </script>
+</body>
+</html>
