@@ -60,6 +60,7 @@ html {
         transition: .3s ease;
         padding: 10%;
         position: relative;
+        -webkit-tap-highlight-color: transparent
     }
         .game-field:has(.game-field__input:not(:checked):not(:disabled)){
             cursor: pointer;
