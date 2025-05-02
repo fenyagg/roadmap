@@ -24,12 +24,6 @@ class Game {
      */
     $gameReset;
 
-
-    /**
-     * @type {['X', '0']}
-     */
-    PLAYERS = ['X', '0'];
-
     DEFAULT_VALUES = [[], [], []];
     /**
      * @type {PlayerMark[][]}
